@@ -93,7 +93,7 @@ class Flowdock extends Adapter
         @changeUserNick(message.content.user.id, message.content.user.nick)
       if @needsReconnect(message)
         @reconnect('Reloading flow list')
-      return unless message.event in ['message', 'comment']
+      return unless message.event in ['message', 'comment', 'mail']
       return if @myId(message.user)
       return if String(message.user) in @ignores
 
